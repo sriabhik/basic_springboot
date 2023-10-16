@@ -26,4 +26,10 @@ public class EmployeeRecord {
     @Column(name = "empAge")
     private int age;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_addressId",referencedColumnName = "addressId")
+    private EmpAddress empAddress;
+
+
+
 }

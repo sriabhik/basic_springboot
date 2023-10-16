@@ -6,6 +6,8 @@ import com.companydata.service.EmployeeRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employee")
 @CrossOrigin("*")
@@ -24,4 +26,10 @@ public class EmployeeRecordController {
     public EmployeeRecord getByEmpid(@PathVariable Integer id){
         return this.employeeRecordService.getByEmpId(id);
     }
+
+    @GetMapping("/getAllemployee")
+    public List<EmployeeRecord> employeeRecordList(){
+        return this.employeeRecordService.allEmpRecord();
+    }
+
 }
