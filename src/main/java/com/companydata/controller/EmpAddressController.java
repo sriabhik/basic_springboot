@@ -14,13 +14,14 @@ public class EmpAddressController {
     @Autowired
     private EmpAddressService empAddressService;
 
-    //save address
 
-    
+    @PostMapping("/saveAddress")
+    public EmpAddress addressSave(@RequestBody EmpAddress addressData ){
+        System.out.println("Emp Name ::  "+ addressData.getEmployeeRecord().getName());
+        System.out.println("I am a address Controller !! ");
+        return this.empAddressService.saveAddress(addressData);
 
-    @GetMapping("/getByAddressId/{addressId}")
-
-    public EmpAddress  getByAddressId(@PathVariable Integer addressId){
-        return this.empAddressService.getByAddressId(addressId);
     }
+
+
 }

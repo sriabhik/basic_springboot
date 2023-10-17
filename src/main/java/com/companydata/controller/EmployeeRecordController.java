@@ -1,6 +1,7 @@
 package com.companydata.controller;
 
 
+import com.companydata.entities.EmpAddress;
 import com.companydata.entities.EmployeeRecord;
 import com.companydata.service.EmployeeRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,12 @@ public class EmployeeRecordController {
 
     @GetMapping("/getById/{id}")
     public EmployeeRecord getByEmpid(@PathVariable Integer id){
+
+
+        System.out.println("I am controller");
         return this.employeeRecordService.getByEmpId(id);
     }
+
 
     @GetMapping("/getAllemployee")
     public List<EmployeeRecord> employeeRecordList(){

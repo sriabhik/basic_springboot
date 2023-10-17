@@ -20,4 +20,6 @@ public class EmpAddress {
 
     private String location;
 
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "empAddress")
+    private EmployeeRecord employeeRecord;
 }

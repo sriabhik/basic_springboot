@@ -1,6 +1,7 @@
 package com.companydata.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +29,7 @@ public class EmployeeRecord {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "emp_addressId",referencedColumnName = "addressId")
+    @JsonIgnore
     private EmpAddress empAddress;
-
 
 }
