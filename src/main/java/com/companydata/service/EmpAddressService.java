@@ -28,8 +28,6 @@ public class EmpAddressService {
              newRecord.setName(empAddress.getEmployeeRecord().getName());
              newRecord.setAge(empAddress.getEmployeeRecord().getAge());
              newRecord.setEmpAddress(saveData);
-
-
              saveData.setEmployeeRecord(newRecord);
 
              return this.empAddressRepo.save(saveData);

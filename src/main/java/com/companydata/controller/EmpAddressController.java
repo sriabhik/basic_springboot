@@ -13,15 +13,15 @@ public class EmpAddressController {
 
     @Autowired
     private EmpAddressService empAddressService;
-
-
     @PostMapping("/saveAddress")
     public EmpAddress addressSave(@RequestBody EmpAddress addressData ){
+
         System.out.println("Emp Name ::  "+ addressData.getEmployeeRecord().getName());
         System.out.println("I am a address Controller !! ");
-        return this.empAddressService.saveAddress(addressData);
+        return empAddressService.saveAddress(addressData);
 
     }
+
 
 
 }
